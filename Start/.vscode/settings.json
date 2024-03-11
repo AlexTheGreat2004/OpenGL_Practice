@@ -1,0 +1,10 @@
+{
+    "makefile.makefilePath": "/Users/alexanderaseme/OpenGL_Practice/Start/",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/Users/alexanderaseme/OpenGL_Practice/Start/bin",
+            "binaryPath": "/Users/alexanderaseme/OpenGL_Practice/Start/bin/myApp",
+            "binaryArgs": []
+        }
+    ]
+}
