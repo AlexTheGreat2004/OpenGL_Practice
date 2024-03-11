@@ -124,10 +124,14 @@ int main(void)
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
 
-    float positions[6] = {
+    float positions[] = {
        -0.5f, -0.5f,
-        0.0f,  0.5f,
-        0.5f, -0.5f
+        0.5f, -0.5f,
+        0.5f,  0.5f,
+
+        0.5f,  0.5f,
+       -0.5f,  0.5f,
+       -0.5f, -0.5f
     };
 
     unsigned int VBO, VAO;
@@ -135,7 +139,7 @@ int main(void)
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 6 * 2 * sizeof(float), positions, GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
@@ -157,7 +161,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
